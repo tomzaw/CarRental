@@ -22,7 +22,7 @@
                     <c:when test="${vehicles==null or empty vehicles}"><h2>No vehicles.</h2></c:when>
                     <c:otherwise>
                         <table>
-                            <c:foreach>
+                            <c:forEach>
                                 <tr><td>Id</td><td>Comapany</td><td>Model</td><td>Engine</td><td>Engine volume</td><td>Color</td></tr>
                                 <c:foreach items="${vehicles}" var="i">
                                     <tr>
@@ -35,7 +35,7 @@
                                         <td><a href="">Edit</a></td>
                                         <td><a href="">Delete</a></td>
                                     </tr>
-                                </c:foreach>
+                                </c:forEach>
                             </c:foreach>
                         </table>
                     </c:otherwise>

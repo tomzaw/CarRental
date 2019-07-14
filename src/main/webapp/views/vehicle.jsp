@@ -14,17 +14,43 @@
     <body>
         <%@include file="header.jsp"%>
 
-        <h1>Specific Car Page.</h1>
-
         <div class ="container">
             <div class="section">
-                Aa.
-                <a href="index.jsp" class="btn-large light-blue">Rent car</a><br><br>
                 <br><br><br><br>
                 <br><br><br><br>
-                <br><br><br><br>
-                <br><br><br><br>
-                B.
+                <div class="row">
+                    <div class="col s6">
+                        <img class="responsive-img" src="${pageContext.request.contentType}/img/Mazda_CX-3.jpg" width="540" height="300"/>
+                    </div>
+                    <div class="col s6">
+                        <table>
+                            <tr><td>Company</td><td>Mazda</td></tr>
+                            <tr><td>Model</td><td>CX-3</td></tr>
+                            <tr><td>Engine</td><td>Tdi</td></tr>
+                            <tr><td>Engine Volume</td><td>1.4</td></tr>
+                            <tr><td>Color</td><td>White</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <p>Description.</p>
+                        <br><br>
+                        <br><br>
+                        <br><br>
+
+                        <h4>Call or send a form and the company employee will call you.</h4>
+                        <h4>Phone: 000-000-000.</h4>
+
+                        <form action="/post-client-form" method="post">
+                            <input type="text" placeholder="First name.">
+                            <input type="text" placeholder="Last name.">
+                            <input type="text" placeholder="Email.">
+                            <input type="text" placeholder="Phone."><br><br>
+                            <input class="btn-large blue" type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 

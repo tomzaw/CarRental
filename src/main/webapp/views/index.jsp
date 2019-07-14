@@ -41,7 +41,7 @@
                     <div class="col s4">
                         <div class="card">   
                             <div class="card-title center-align blue-text">Rent long term.</div>
-                            <div class="card-content">Just moved into the city and need a long term way of transport. Return the car whenever you want.</div>
+                            <div class="card-content">Just moved into the city and need a long term way of transport? Return the car whenever you want.</div>
                         </div>
                     </div>
                 </div>

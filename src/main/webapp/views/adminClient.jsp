@@ -15,15 +15,14 @@
 
         <div class ="container">
             <div class="section">
-                <h1>Admin Client Page.</h1>
-                Aa.
+                <h1>Clients</h1>
                 <a href="" class="btn-large blue">Add</a><br><br>
                 <c:choose> 
                     <c:when test="${clients==null or empty clients}"><h2>No clients.</h2></c:when>
                     <c:otherwise>
                         <table>
                             <tr><td>Id</td><td>First name</td><td>Last name</td><td>Email</td><td>Phone</td></tr>
-                            <c:forEach items="${vehicles}" var="i">
+                            <c:forEach items="${clients}" var="i">
                                 <tr>
                                     <td>${i.id}</td>
                                     <td>${i.firstName}</td>
@@ -40,6 +39,10 @@
             </div>
         </div>
 
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
         <%@include file="footer.jsp"%>
         <script src="js/materialize.min.js"></script>
     </body>

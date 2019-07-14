@@ -8,16 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
-        <title>Admin Client Page</title>
+        <title>Admin Client Form Page</title>
     </head>
     <body>
         <%@include file="header.jsp"%>
 
         <div class ="container">
             <div class="section">
-                <h1>Admin Client Page.</h1>
-                Aa.
-                <a href="" class="btn-large blue">Add</a><br><br>
+                <h1>Clients Forms</h1>
+                <a href="admin-client-form-add" class="btn-large blue">Add</a><br><br>
                 <c:choose> 
                     <c:when test="${clientsForms==null or empty clientsForms}"><h2>No forms.</h2></c:when>
                     <c:otherwise>
@@ -30,8 +29,8 @@
                                     <td>${i.lastName}</td>
                                     <td>${i.email}</td>
                                     <td>${i.phone}</td>
-                                    <td><a href="">Edit</a></td>
-                                    <td><a href="">Delete</a></td>
+                                    <td><a href="admin-client-form-edit/${i.id}">Edit</a></td>
+                                    <td><a href="admin-client-form-delete/${i.id}">Delete</a></td>
                                 </tr>
                             </c:forEach>
                         </table>
@@ -40,6 +39,10 @@
             </div>
         </div>
 
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
         <%@include file="footer.jsp"%>
         <script src="js/materialize.min.js"></script>
     </body>

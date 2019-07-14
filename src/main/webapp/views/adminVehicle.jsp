@@ -15,9 +15,8 @@
 
         <div class ="container">
             <div class="section">
-                <h1>Admin Vehicle Page.</h1>
-                Aa.
-                <a href="" class="btn-large blue">Add</a><br><br>
+                <h1>Vehicles</h1>
+                <a href="/admin-vehicle-add" class="btn-large blue">Add</a><br><br>
                 <c:choose>
                     <c:when test="${vehicles==null or empty vehicles}"><h2>No vehicles.</h2></c:when>
                     <c:otherwise>
@@ -28,11 +27,11 @@
                                     <td>${i.id}</td>
                                     <td>${i.company}</td>
                                     <td>${i.model}</td>
-                                    <td>${i.engine}</td>
+                                    <td>${i.engineName}</td>
                                     <td>${i.engineVolume}</td>
                                     <td>${i.color}</td>
-                                    <td><a href="admin-vehicle-edit">Edit</a></td>
-                                    <td><a href="admin-vehicle-delete">Delete</a></td>
+                                    <td><a href="admin-vehicle-edit/${i.id}">Edit</a></td>
+                                    <td><a href="admin-vehicle-delete/${i.id}">Delete</a></td>
                                 </tr>
                             </c:forEach>
                         </table>
@@ -40,7 +39,11 @@
                 </c:choose>
             </div>
         </div>
-
+        
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
         <%@include file="footer.jsp"%>
         <script src="js/materialize.min.js"></script>
     </body>

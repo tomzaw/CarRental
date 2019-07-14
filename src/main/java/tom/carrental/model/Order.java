@@ -3,7 +3,7 @@ package tom.carrental.model;
 import java.time.LocalDateTime;
 
 public class Order {
-    
+
     private int id;
     private LocalDateTime dateFrom;
     private LocalDateTime dateTo;

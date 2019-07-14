@@ -15,9 +15,8 @@
 
         <div class ="container">
             <div class="section">
-                <h1>Admin Order Page.</h1>
-                Aa.
-                <a href="" class="btn-large blue">Add</a><br><br>
+                <h1>Orders</h1>
+                <a href="admin-order-add" class="btn-large blue">Add</a><br><br>
                 <c:choose> 
                     <c:when test="${orders==null or empty orders}"><h2>No orders.</h2></c:when>
                     <c:otherwise>
@@ -36,8 +35,8 @@
                                     <td>${i.description}</td>
                                     <td>${i.client.id}</td>
                                     <td>${i.appUser.id}</td>
-                                    <td><a href="">Edit</a></td>
-                                    <td><a href="">Delete</a></td>
+                                    <td><a href="admin-order-edit/${i.id}">Edit</a></td>
+                                    <td><a href="admin-order-delete/${i.id}">Delete</a></td>
                                 </tr>
                             </c:forEach>
                         </table>
@@ -46,6 +45,10 @@
             </div>
         </div>
 
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
         <%@include file="footer.jsp"%>
         <script src="js/materialize.min.js"></script>
     </body>
