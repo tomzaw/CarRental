@@ -17,16 +17,16 @@ public class AdminVehicleController {
 
         List<Vehicle> vehicles = new ArrayList<>();
 
-        Vehicle vehicle1 = new Vehicle("Honda", "Accord", 1, "TDi", (float) 1.4, "white");
+        Vehicle vehicle1 = new Vehicle("Honda", "Accord", 1, "TDi", 1.4f, "white");
         vehicle1.setId(1);
         vehicles.add(vehicle1);
-        Vehicle vehicle2 = new Vehicle("Mazda", "Cx-3", 1, "TDi", (float) 1.4, "white");
+        Vehicle vehicle2 = new Vehicle("Mazda", "Cx-3", 1, "TDi", 1.4f, "white");
         vehicle2.setId(2);
         vehicles.add(vehicle2);
-        Vehicle vehicle3 = new Vehicle("Nissan", "Qashqai", 1, "TDi", (float) 1.8, "grey");
+        Vehicle vehicle3 = new Vehicle("Nissan", "Qashqai", 1, "TDi", 1.8f, "grey");
         vehicle3.setId(3);
         vehicles.add(vehicle3);
-        Vehicle vehicle4 = new Vehicle("Skoda", "Octavia", 1, "TDi", (float) 1.6, "white");
+        Vehicle vehicle4 = new Vehicle("Skoda", "Octavia", 1, "TDi", 1.6f, "white");
         vehicle4.setId(4);
         vehicles.add(vehicle4);
 

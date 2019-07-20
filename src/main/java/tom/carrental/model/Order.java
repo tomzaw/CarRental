@@ -1,18 +1,32 @@
 package tom.carrental.model;
 
 import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "orders")
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private LocalDateTime dateFrom;
     private LocalDateTime dateTo;
     private String paymentType;
     private String title;
     private String description;
+    @ManyToOne
     private AppUser appUser;
+    @ManyToOne
     private Client client;
-
+    @ManyToOne
+    private Vehicle vehicle;
+    
     public Order(LocalDateTime dateFrom, LocalDateTime dateTo, String paymentType, String title, String description, AppUser appUser, Client client) {
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
@@ -88,6 +102,14 @@ public class Order {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     @Override

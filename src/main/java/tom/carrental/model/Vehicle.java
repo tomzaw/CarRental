@@ -1,7 +1,18 @@
 package tom.carrental.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Vehicle {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String company;
     private String model;
@@ -9,6 +20,8 @@ public class Vehicle {
     private String engineName;
     private float engineVolume;
     private String color;
+    @OneToMany(mappedBy = "vehicle")
+    private List<Order> orders = new ArrayList<>();
 
     public Vehicle(String company, String model, int version, String engineName, float engineVolume, String color) {
         this.company = company;
@@ -76,6 +89,14 @@ public class Vehicle {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     @Override
