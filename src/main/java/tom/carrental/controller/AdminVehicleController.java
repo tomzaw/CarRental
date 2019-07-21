@@ -1,6 +1,5 @@
 package tom.carrental.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,60 +7,57 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import tom.carrental.model.Vehicle;
+import tom.carrental.service.VehicleService;
 
 @Controller
 public class AdminVehicleController {
 
+    private VehicleService vehicleService;
+
+    public AdminVehicleController(VehicleService vehicleService) {
+        this.vehicleService = vehicleService;
+    }
+
     @GetMapping("/admin-vehicle")
     public String adminVehicle(Model mod) {
 
-        List<Vehicle> vehicles = new ArrayList<>();
-
-        Vehicle vehicle1 = new Vehicle("Honda", "Accord", 1, "TDi", 1.4f, "white");
-        vehicle1.setId(1);
-        vehicles.add(vehicle1);
-        Vehicle vehicle2 = new Vehicle("Mazda", "Cx-3", 1, "TDi", 1.4f, "white");
-        vehicle2.setId(2);
-        vehicles.add(vehicle2);
-        Vehicle vehicle3 = new Vehicle("Nissan", "Qashqai", 1, "TDi", 1.8f, "grey");
-        vehicle3.setId(3);
-        vehicles.add(vehicle3);
-        Vehicle vehicle4 = new Vehicle("Skoda", "Octavia", 1, "TDi", 1.6f, "white");
-        vehicle4.setId(4);
-        vehicles.add(vehicle4);
-
+        List<Vehicle> vehicles = vehicleService.findAll();
         mod.addAttribute("vehicles", vehicles);
-
         return "adminVehicle";
     }
 
     @GetMapping("/admin-vehicle-add")
-    public String adminVehicleAddGet() {
+    public String adminVehicleAddGet(Model mod) {
 
+        mod.addAttribute("vehicle", new Vehicle());
         return "adminVehicleAdd";
     }
 
     @PostMapping("/admin-vehicle-add")
-    public String adminVehicleAddPost() {
+    public String adminVehicleAddPost(Vehicle vehicle) {
 
-        return "adminVehicle";
+        vehicleService.save(vehicle);
+        return "redirect:/admin-vehicle";
     }
 
     @GetMapping("/admin-vehicle-edit/{id}")
-    public String adminVehicleEditGet(@PathVariable String id) {
+    public String adminVehicleEditGet(@PathVariable int id, Model mod) {
 
-        return "adminVehicleEdit";
+        mod.addAttribute("vehicle", vehicleService.find(id));
+        return "adminVehicleAdd";
     }
 
     @PostMapping("/admin-vehicle-edit/{id}")
-    public String adminVehicleEditPost(@PathVariable String id) {
+    public String adminVehicleEditPost(@PathVariable int id, Vehicle vehicle) {
 
-        return "adminVehicle";
+        vehicleService.save(vehicle);
+        return "redirect:/admin-vehicle";
     }
 
     @GetMapping("/admin-vehicle-delete/{id}")
-    public String adminVehicleDelete(@PathVariable String id) {
+    public String adminVehicleDelete(@PathVariable int id) {
 
-        return "adminVehicle";
+        vehicleService.delete(id);
+        return "redirect:/admin-vehicle";
     }
 }

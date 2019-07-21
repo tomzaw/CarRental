@@ -9,7 +9,6 @@
     </head>
     <body>
         <footer class="page-footer blue-grey">
-        <!--<footer class="page-footer blue-grey" style="position: fixed; bottom:0; width: 100%;">-->
             <div class="container">
                 <h4 class="white-text">Footer info.</h4>
                 <p class="white-text">Company contact info.</p>

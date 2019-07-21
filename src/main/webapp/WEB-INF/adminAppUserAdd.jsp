@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -7,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/materialize.min.css"  media="screen"/>
         <title>Admin Users Page</title>
     </head>
     <body>
@@ -15,31 +16,24 @@
 
         <div class ="container">
             <div class="section">
-                <h1>Admin Users Page.</h1>
-                Aa.
-                <a href="" class="btn-large blue">Add</a><br><br>
-                <c:choose> 
-                    <c:when test="${users==null or empty users}"><h2>No users.</h2></c:when>
-                    <c:otherwise>
-                        <table>
-                            <tr><td>Id</td><td>Username</td><td>Email</td><td>Password</td></tr>
-                            <c:forEach items="${users}" var="i">
-                                <tr>
-                                    <td>${i.id}</td>
-                                    <td>${i.username}</td>
-                                    <td>${i.email}</td>
-                                    <td>${i.password}</td>
-                                    <td><a href="">Edit</a></td>
-                                    <td><a href="">Delete</a></td>
-                                </tr>
-                            </c:forEach>
-                        </table>
-                    </c:otherwise>
-                </c:choose>
+                <h1>Enter user data.</h1>
+
+                <form:form action="/admin-user-add" method="post" modelAttribute="user">
+                    <form:hidden path="id"/>
+                    <form:input type="text" path="username" placeholder="Username."/>
+                    <form:input type="text" path="email" placeholder="Email."/>
+                    <form:password path="password" placeholder="Password."/>
+                    <input class="btn-large blue" type="submit" value="Send"/>
+                </form:form>
+
             </div>
         </div>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
 
         <%@include file="footer.jsp"%>
-        <script src="js/materialize.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/materialize.min.js"></script>
     </body>
 </html>

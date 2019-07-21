@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -7,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
+        <!--<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/materialize.min.css"  media="screen"/>-->
         <title>Admin Order Page</title>
     </head>
     <body>
@@ -15,38 +16,45 @@
 
         <div class ="container">
             <div class="section">
-                <h1>Admin Order Page.</h1>
-                Aa.
-                <a href="" class="btn-large blue">Add</a><br><br>
-                <c:choose> 
-                    <c:when test="${orders==null or empty orders}"><h2>No orders.</h2></c:when>
-                    <c:otherwise>
-                        <table>
-                            <tr>
-                                <td>Id</td><td>From</td><td>To</td><td>Payment type</td><td>Title</td><td>Description</td>
-                                <td>Client id</td><td>Vehicle id</td>
-                            </tr>
-                            <c:forEach items="${orders}" var="i">
-                                <tr>
-                                    <td>${i.id}</td>
-                                    <td>${i.dateFrom}</td>
-                                    <td>${i.dateTo}</td>
-                                    <td>${i.paymentType}</td>
-                                    <td>${i.title}</td>
-                                    <td>${i.description}</td>
-                                    <td>${i.client.id}</td>
-                                    <td>${i.appUser.id}</td>
-                                    <td><a href="">Edit</a></td>
-                                    <td><a href="">Delete</a></td>
-                                </tr>
-                            </c:forEach>
-                        </table>
-                    </c:otherwise>
-                </c:choose>
+                <h1>Enter order data.</h1>
+
+                <form:form action="/admin-order-add" method="post" modelAttribute="order">
+                    <form:hidden path="id"/>
+                    <form:input type="text" path="dateFrom" placeholder="Date from."/>
+                    <form:input type="text" path="dateTo" placeholder="Date to."/>
+
+                    <form:select path="paymentType">
+                        <form:option value="">Select payment type.</form:option>
+                        <form:options items="${paymentOptionArray}" />
+                    </form:select>
+
+                    <form:input type="text" path="title" placeholder="Title."/>
+                    <form:input type="text" path="description" placeholder="Description."/>
+
+                    <form:select path="appUser.id">
+                        <form:option value="">Select user.</form:option>
+                        <form:options items="${appUserList}" itemLabel="username" itemValue="id"/>
+                    </form:select>
+
+                    <form:select path="client.id">
+                        <form:option value="">Select client.</form:option>
+                        <form:options items="${clientList}" itemValue="id"/>
+                    </form:select>
+
+                    <form:select path="vehicle.id">
+                        <form:option value="">Select vehicle.</form:option>
+                        <form:options items="${vehicleList}" itemValue="id"/>
+                    </form:select>
+                    <input class="btn-large blue" type="submit" value="Send"/>
+                </form:form>
+
             </div>
         </div>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
 
         <%@include file="footer.jsp"%>
-        <script src="js/materialize.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/materialize.min.js"></script>
     </body>
 </html>

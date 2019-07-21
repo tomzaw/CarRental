@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -7,40 +8,32 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
-        <title>Admin Client Page</title>
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/materialize.min.css"  media="screen"/>
+        <title>Admin Client Form Page</title>
     </head>
     <body>
         <%@include file="header.jsp"%>
 
         <div class ="container">
             <div class="section">
-                <h1>Admin Client Page.</h1>
-                Aa.
-                <a href="" class="btn-large blue">Add</a><br><br>
-                <c:choose> 
-                    <c:when test="${clientsForms==null or empty clientsForms}"><h2>No forms.</h2></c:when>
-                    <c:otherwise>
-                        <table>
-                            <tr><td>Id</td><td>First name</td><td>Last name</td><td>Email</td><td>Phone</td></tr>
-                            <c:forEach items="${clientsForms}" var="i">
-                                <tr>
-                                    <td>${i.id}</td>
-                                    <td>${i.firstName}</td>
-                                    <td>${i.lastName}</td>
-                                    <td>${i.email}</td>
-                                    <td>${i.phone}</td>
-                                    <td><a href="">Edit</a></td>
-                                    <td><a href="">Delete</a></td>
-                                </tr>
-                            </c:forEach>
-                        </table>
-                    </c:otherwise>
-                </c:choose>
+                <h1>Enter client form data.</h1>
+
+                <form:form action="/admin-client-form-add" method="post" modelAttribute="clientForm">
+                    <form:hidden path="id"/>
+                    <form:input type="text" path="firstName" placeholder="First name."/>
+                    <form:input type="text" path="lastName" placeholder="Last name."/>
+                    <form:input type="text" path="email" placeholder="Email."/>
+                    <form:input type="text" path="phone" placeholder="Phone."/>
+                    <input class="btn-large blue" type="submit" value="Send"/>
+                </form:form>
+
             </div>
         </div>
+        <br><br><br><br>
+        <br><br><br><br>
+        <br><br><br><br>
 
         <%@include file="footer.jsp"%>
-        <script src="js/materialize.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/materialize.min.js"></script>
     </body>
 </html>

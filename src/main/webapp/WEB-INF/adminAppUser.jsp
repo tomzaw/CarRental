@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen"/>
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/materialize.min.css"  media="screen"/>
         <title>Admin Users Page</title>
     </head>
     <body>
@@ -21,13 +21,12 @@
                     <c:when test="${users==null or empty users}"><h2>No users.</h2></c:when>
                     <c:otherwise>
                         <table>
-                            <tr><td>Id</td><td>Username</td><td>Email</td><td>Password</td></tr>
+                            <tr><td>Id</td><td>Username</td><td>Email</td></tr>
                             <c:forEach items="${users}" var="i">
                                 <tr>
                                     <td>${i.id}</td>
                                     <td>${i.username}</td>
                                     <td>${i.email}</td>
-                                    <td>${i.password}</td>
                                     <td><a href="admin-user-edit/${i.id}">Edit</a></td>
                                     <td><a href="admin-user-delete/${i.id}">Delete</a></td>
                                 </tr>
@@ -43,6 +42,6 @@
         <br><br><br><br>
         <br><br><br><br>
         <%@include file="footer.jsp"%>
-        <script src="js/materialize.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/materialize.min.js"></script>
     </body>
 </html>

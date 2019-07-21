@@ -16,7 +16,7 @@
         <div class ="container">
             <div class="section">
                 <h1>Clients</h1>
-                <a href="" class="btn-large blue">Add</a><br><br>
+                <a href="admin-client-add" class="btn-large blue">Add</a><br><br>
                 <c:choose> 
                     <c:when test="${clients==null or empty clients}"><h2>No clients.</h2></c:when>
                     <c:otherwise>
@@ -29,8 +29,8 @@
                                     <td>${i.lastName}</td>
                                     <td>${i.email}</td>
                                     <td>${i.phone}</td>
-                                    <td><a href="">Edit</a></td>
-                                    <td><a href="">Delete</a></td>
+                                    <td><a href="admin-client-edit/${i.id}">Edit</a></td>
+                                    <td><a href="admin-client-delete/${i.id}">Delete</a></td>
                                 </tr>
                             </c:forEach>
                         </table>
