@@ -31,6 +31,7 @@
                                     <td>${i.phone}</td>
                                     <td><a href="admin-client-form-edit/${i.id}">Edit</a></td>
                                     <td><a href="admin-client-form-delete/${i.id}">Delete</a></td>
+                                    <td><a href="admin-client-form-confirm/${i.id}">Confirm</a></td>
                                 </tr>
                             </c:forEach>
                         </table>

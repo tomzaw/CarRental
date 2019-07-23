@@ -17,13 +17,13 @@ public class ClientFormFixture {
     @PostConstruct
     public void init() {
 
-        ClientForm clientForm1 = new ClientForm("Name1", "Name1", "name1@foo.com", "1001");
+        ClientForm clientForm1 = new ClientForm("Name5", "Name5", "name5@foo.com", "100100105");
 
-        ClientForm clientForm2 = new ClientForm("Name2", "Name2", "name2@foo.com", "1002");
+        ClientForm clientForm2 = new ClientForm("Name6", "Name6", "name6@foo.com", "100100106");
 
-        ClientForm clientForm3 = new ClientForm("Name3", "Name3", "name3@foo.com", "1003");
+        ClientForm clientForm3 = new ClientForm("Name7", "Name7", "name7@foo.com", "100100107");
 
-        ClientForm clientForm4 = new ClientForm("Name4", "Name4", "name4@foo.com", "1004");
+        ClientForm clientForm4 = new ClientForm("Name8", "Name8", "name8@foo.com", "100100108");
 
         clientFormRepository.save(clientForm1);
         clientFormRepository.save(clientForm2);
