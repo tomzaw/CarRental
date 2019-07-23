@@ -21,7 +21,20 @@
                 <br><br><br><br>
                 <div class="row">
                     <div class="col s6">
-                        <img class="responsive-img" src="${pageContext.request.contentType}/img/Mazda_CX-3.jpg" width="540" height="300"/>
+                        <c:choose>
+                            <c:when test="${vehicle.id==1}">                    
+                                <img class="responsive-img" src="${pageContext.request.contentType}/img/Honda_Accord_IX_facelift_China_2016-04-16.jpg" width="540" height="300"/>
+                            </c:when>
+                            <c:when test="${vehicle.id==2}">                    
+                                <img class="responsive-img" src="${pageContext.request.contentType}/img/Mazda_CX-3.jpg" width="540" height="300"/>
+                            </c:when>
+                            <c:when test="${vehicle.id==3}"> 
+                                <img class="responsive-img" src="${pageContext.request.contentType}/img/Nissan_qashqai_j11_front-side.png" width="540" height="300"/>
+                            </c:when>
+                            <c:when test="${vehicle.id==4}">  
+                                <img class="responsive-img" src="${pageContext.request.contentType}/img/Skoda_Octavia_SE_TDi_S-A_1.6_Front.jpg" width="540" height="300"/>
+                            </c:when>
+                        </c:choose>
                     </div>
                     <div class="col s6">
                         <table>
