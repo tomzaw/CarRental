@@ -31,11 +31,6 @@ public class AdminOrderController {
         this.vehicleService = vehicleService;
     }
 
-    /*
-    public AdminOrderController(OrderService orderService) {
-        this.orderService = orderService;
-    }
-     */
     @GetMapping("/admin-order")
     public String adminOrder(Model mod) {
         /*
@@ -84,7 +79,7 @@ public class AdminOrderController {
     @GetMapping("/admin-order-edit/{id}")
     public String adminOrderEditGet(@PathVariable int id, Model mod) {
 
-        mod.addAttribute("order", new Order());
+        mod.addAttribute("order", orderService.find(id));
         return "adminOrderAdd";
     }
 

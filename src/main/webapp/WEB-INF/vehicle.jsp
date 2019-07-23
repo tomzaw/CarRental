@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE HTML>
 
 <html>
@@ -42,13 +43,13 @@
                         <h4>Call or send a form and the company employee will call you.</h4>
                         <h4>Phone: 000-000-000.</h4>
 
-                        <form action="/post-client-form" method="post">
-                            <input type="text" placeholder="First name.">
-                            <input type="text" placeholder="Last name.">
-                            <input type="text" placeholder="Email.">
-                            <input type="text" placeholder="Phone."><br><br>
+                        <form:form action="/post-client-form" method="post" modelAttribute="clientForm">
+                            <form:input type="text" path="firstName" placeholder="First name."/>
+                            <form:input type="text" path="lastName" placeholder="Last name."/>
+                            <form:input type="text" path="email" placeholder="Email."/>
+                            <form:input type="text" path="phone" placeholder="Phone."/><br><br>
                             <input class="btn-large blue" type="submit" value="Send">
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </div>

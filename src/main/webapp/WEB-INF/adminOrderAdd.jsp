@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <!--<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/materialize.min.css"  media="screen"/>-->
+        <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/materialize.min.css"  media="screen"/>
         <title>Admin Order Page</title>
     </head>
     <body>
@@ -23,26 +23,26 @@
                     <form:input type="text" path="dateFrom" placeholder="Date from."/>
                     <form:input type="text" path="dateTo" placeholder="Date to."/>
 
-                    <form:select path="paymentType">
-                        <form:option value="">Select payment type.</form:option>
+                    <form:select path="paymentType" required="true">
+                        <form:option value="" disabled="true" selected="true">Select payment type.</form:option>
                         <form:options items="${paymentOptionArray}" />
                     </form:select>
 
                     <form:input type="text" path="title" placeholder="Title."/>
                     <form:input type="text" path="description" placeholder="Description."/>
 
-                    <form:select path="appUser.id">
-                        <form:option value="">Select user.</form:option>
+                    <form:select path="appUser.id" required="true">
+                        <form:option value="0" disabled="true" selected="true">Select user.</form:option>
                         <form:options items="${appUserList}" itemLabel="username" itemValue="id"/>
                     </form:select>
 
-                    <form:select path="client.id">
-                        <form:option value="">Select client.</form:option>
+                    <form:select path="client.id" required="true">
+                        <form:option value="0" disabled="true" selected="true">Select client.</form:option>
                         <form:options items="${clientList}" itemValue="id"/>
                     </form:select>
 
-                    <form:select path="vehicle.id">
-                        <form:option value="">Select vehicle.</form:option>
+                    <form:select path="vehicle.id" required="true">
+                        <form:option value="0" disabled="true" selected="true">Select vehicle.</form:option>
                         <form:options items="${vehicleList}" itemValue="id"/>
                     </form:select>
                     <input class="btn-large blue" type="submit" value="Send"/>
@@ -55,6 +55,12 @@
         <br><br><br><br>
 
         <%@include file="footer.jsp"%>
+        <script src="${pageContext.request.contextPath}/js/jquery-3.4.1.min.js"></script>
         <script src="${pageContext.request.contextPath}/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('select').formSelect();
+            });
+        </script>
     </body>
 </html>
