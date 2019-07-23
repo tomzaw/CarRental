@@ -1,8 +1,10 @@
 package tom.carrental.controller;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +36,11 @@ public class AdminVehicleController {
     }
 
     @PostMapping("/admin-vehicle-add")
-    public String adminVehicleAddPost(Vehicle vehicle) {
+    public String adminVehicleAddPost(@Valid Vehicle vehicle, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "adminVehicleAdd";
+        }
 
         vehicleService.save(vehicle);
         return "redirect:/admin-vehicle";
@@ -48,7 +54,11 @@ public class AdminVehicleController {
     }
 
     @PostMapping("/admin-vehicle-edit/{id}")
-    public String adminVehicleEditPost(@PathVariable int id, Vehicle vehicle) {
+    public String adminVehicleEditPost(@Valid Vehicle vehicle, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "adminVehicleAdd";
+        }
 
         vehicleService.save(vehicle);
         return "redirect:/admin-vehicle";

@@ -21,30 +21,39 @@
                 <form:form action="/admin-order-add" method="post" modelAttribute="order">
                     <form:hidden path="id"/>
                     <form:input type="text" path="dateFrom" placeholder="Date from."/>
+                    <form:errors path="dateFrom"/>
                     <form:input type="text" path="dateTo" placeholder="Date to."/>
+                    <form:errors path="dateTo"/>
 
                     <form:select path="paymentType" required="true">
                         <form:option value="" disabled="true" selected="true">Select payment type.</form:option>
                         <form:options items="${paymentOptionArray}" />
                     </form:select>
+                    <form:errors path="paymentType"/>
 
                     <form:input type="text" path="title" placeholder="Title."/>
+                    <form:errors path="title"/>
                     <form:input type="text" path="description" placeholder="Description."/>
+                    <form:errors path="description"/>
 
                     <form:select path="appUser.id" required="true">
                         <form:option value="0" disabled="true" selected="true">Select user.</form:option>
                         <form:options items="${appUserList}" itemLabel="username" itemValue="id"/>
                     </form:select>
+                    <form:errors path="appUser.id"/>
 
                     <form:select path="client.id" required="true">
                         <form:option value="0" disabled="true" selected="true">Select client.</form:option>
                         <form:options items="${clientList}" itemValue="id"/>
                     </form:select>
+                    <form:errors path="client.id"/>
 
                     <form:select path="vehicle.id" required="true">
                         <form:option value="0" disabled="true" selected="true">Select vehicle.</form:option>
                         <form:options items="${vehicleList}" itemValue="id"/>
                     </form:select>
+                    <form:errors path="vehicle.id"/><br>
+
                     <input class="btn-large blue" type="submit" value="Send"/>
                 </form:form>
 

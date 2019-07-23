@@ -7,20 +7,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Vehicle {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotBlank
     private String company;
+
+    @NotBlank
     private String model;
+
+    @NotNull
     private Integer version;
+
+    @NotBlank
     private String engineName;
+
+    @NotNull
     private Float engineVolume;
+
+    @NotBlank
     private String color;
+
+    @NotBlank
     private String description;
+
     @OneToMany(mappedBy = "vehicle")
     private List<Order> orders = new ArrayList<>();
 

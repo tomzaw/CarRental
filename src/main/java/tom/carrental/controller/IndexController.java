@@ -17,24 +17,24 @@ public class IndexController {
 
     public IndexController(ClientFormService cfs, VehicleService vs) {
         this.cfs = cfs;
-        this.vs=vs;
+        this.vs = vs;
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String index() {
 
         return "index";
     }
 
     @GetMapping("/car")
-    public String hello() {
+    public String car() {
 
         return "car";
     }
 
     @GetMapping("/car/{company}/{model}/{version}/{id}")
     public String vehicle(@PathVariable int id, Model mod) {
-        
+
         mod.addAttribute("vehicle", vs.find(id));
         mod.addAttribute("clientForm", new ClientForm());
         return "vehicle";

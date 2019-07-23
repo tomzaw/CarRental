@@ -58,9 +58,13 @@
 
                         <form:form action="/post-client-form" method="post" modelAttribute="clientForm">
                             <form:input type="text" path="firstName" placeholder="First name."/>
+                            <form:errors path="firstName"/>
                             <form:input type="text" path="lastName" placeholder="Last name."/>
+                            <form:errors path="lastName"/>
                             <form:input type="text" path="email" placeholder="Email."/>
-                            <form:input type="text" path="phone" placeholder="Phone."/><br><br>
+                            <form:errors path="email"/>
+                            <form:input type="text" path="phone" placeholder="Phone."/>
+                            <form:errors path="phone"/><br><br>
                             <input class="btn-large blue" type="submit" value="Send">
                         </form:form>
                     </div>

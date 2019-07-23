@@ -1,8 +1,10 @@
 package tom.carrental.controller;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +36,11 @@ public class AdminUserController {
     }
 
     @PostMapping("/admin-user-add")
-    public String adminUserAddPost(AppUser user) {
+    public String adminUserAddPost(@Valid AppUser user, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "adminAppUserAdd";
+        }
 
         appUserService.save(user);
         return "redirect:/admin-user";
@@ -48,7 +54,11 @@ public class AdminUserController {
     }
 
     @PostMapping("/admin-user-edit/{id}")
-    public String adminUserEditPost(AppUser user, @PathVariable int id) {
+    public String adminUserEditPost(@Valid AppUser user, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "adminAppUserAdd";
+        }
 
         appUserService.save(user);
         return "redirect:/admin-user";

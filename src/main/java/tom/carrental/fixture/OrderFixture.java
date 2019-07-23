@@ -19,7 +19,7 @@ public class OrderFixture {
 
     @PostConstruct
     public void init() {
-
+        /*
         Order order1 = new Order(LocalDateTime.parse("2019-07-01T20:00:00"), LocalDateTime.parse("2019-07-10T20:00:00"),
                 "Card", "Car Rent", "Car Rent", new AppUser(), new Client());
 
@@ -34,7 +34,7 @@ public class OrderFixture {
 
         Order order5 = new Order(LocalDateTime.parse("2019-07-01T20:00:00"), LocalDateTime.parse("2019-07-10T20:00:00"),
                 "Card", "Car Rent", "Car Rent", new AppUser(), new Client());
-
+         */
 //        orderRepository.save(order1);
 //        orderRepository.save(order2);
 //        orderRepository.save(order3);

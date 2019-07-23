@@ -1,8 +1,10 @@
 package tom.carrental.controller;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +36,11 @@ public class AdminClientController {
     }
 
     @PostMapping("/admin-client-add")
-    public String adminClientAddPost(Client client) {
+    public String adminClientAddPost(@Valid Client client, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "adminClientAdd";
+        }
 
         clientService.save(client);
         return "redirect:/admin-client";
@@ -48,7 +54,11 @@ public class AdminClientController {
     }
 
     @PostMapping("/admin-client-edit/{id}")
-    public String adminClientEditPost(@PathVariable int id, Client client) {
+    public String adminClientEditPost(@Valid Client client, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "adminClientAdd";
+        }
 
         clientService.save(client);
         return "redirect:/admin-client";

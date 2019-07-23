@@ -21,12 +21,19 @@
                 <form:form action="/admin-vehicle-add" method="post" modelAttribute="vehicle">
                     <form:hidden path="id"/>
                     <form:input type="text" path="company" placeholder="Company."/>
+                    <form:errors path="company"/>
                     <form:input type="text" path="model" placeholder="Model."/>
+                    <form:errors path="model"/>
                     <form:input type="text" path="version" placeholder="Version."/>
+                    <form:errors path="version"/>
                     <form:input type="text" path="engineName" placeholder="Engine name."/>
+                    <form:errors path="engineName"/>
                     <form:input type="text" path="engineVolume" placeholder="Engine volume."/>
+                    <form:errors path="engineVolume"/>
                     <form:input type="text" path="color" placeholder="Color."/>
-                    <form:input type="text" path="description" placeholder="Description."/><br><br>
+                    <form:errors path="color"/>
+                    <form:input type="text" path="description" placeholder="Description."/>
+                    <form:errors path="description"/><br>
                     <input class="btn-large blue" type="submit" value="Send"/>
                 </form:form>
 

@@ -21,8 +21,11 @@
                 <form:form action="/admin-user-add" method="post" modelAttribute="user">
                     <form:hidden path="id"/>
                     <form:input type="text" path="username" placeholder="Username."/>
+                    <form:errors path="username"/>
                     <form:input type="text" path="email" placeholder="Email."/>
+                    <form:errors path="email"/>
                     <form:password path="password" placeholder="Password."/>
+                    <form:errors path="password"/><br>
                     <input class="btn-large blue" type="submit" value="Send"/>
                 </form:form>
 

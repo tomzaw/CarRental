@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "orders")
@@ -15,18 +17,28 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull
     private LocalDateTime dateFrom;
+
+    @NotNull
     private LocalDateTime dateTo;
+
+    @NotBlank
     private String paymentType;
+
+    @NotBlank
     private String title;
+
     private String description;
+
     @ManyToOne
     private AppUser appUser;
     @ManyToOne
     private Client client;
     @ManyToOne
     private Vehicle vehicle;
-    
+
     public Order(LocalDateTime dateFrom, LocalDateTime dateTo, String paymentType, String title, String description, AppUser appUser, Client client) {
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
