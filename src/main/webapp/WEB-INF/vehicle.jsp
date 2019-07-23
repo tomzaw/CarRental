@@ -25,17 +25,17 @@
                     </div>
                     <div class="col s6">
                         <table>
-                            <tr><td>Company</td><td>Mazda</td></tr>
-                            <tr><td>Model</td><td>CX-3</td></tr>
-                            <tr><td>Engine</td><td>Tdi</td></tr>
-                            <tr><td>Engine Volume</td><td>1.4</td></tr>
-                            <tr><td>Color</td><td>White</td></tr>
+                            <tr><td>Company</td><td>${vehicle.company}</td></tr>
+                            <tr><td>Model</td><td>${vehicle.model}</td></tr>
+                            <tr><td>Engine</td><td>${vehicle.engineName}</td></tr>
+                            <tr><td>Engine Volume</td><td>${vehicle.engineVolume}</td></tr>
+                            <tr><td>Color</td><td>${vehicle.color}</td></tr>
                         </table>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col s6">
-                        <p>Description.</p>
+                        <p>${vehicle.description}</p>
                         <br><br>
                         <br><br>
                         <br><br>

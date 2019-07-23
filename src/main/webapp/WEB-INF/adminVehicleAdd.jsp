@@ -25,7 +25,8 @@
                     <form:input type="text" path="version" placeholder="Version."/>
                     <form:input type="text" path="engineName" placeholder="Engine name."/>
                     <form:input type="text" path="engineVolume" placeholder="Engine volume."/>
-                    <form:input type="text" path="color" placeholder="Color."/><br><br>
+                    <form:input type="text" path="color" placeholder="Color."/>
+                    <form:input type="text" path="description" placeholder="Description."/><br><br>
                     <input class="btn-large blue" type="submit" value="Send"/>
                 </form:form>
 

@@ -3,17 +3,21 @@ package tom.carrental.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import tom.carrental.model.ClientForm;
 import tom.carrental.service.ClientFormService;
+import tom.carrental.service.VehicleService;
 
 @Controller
 public class IndexController {
 
     private ClientFormService cfs;
+    private VehicleService vs;
 
-    public IndexController(ClientFormService cfs) {
+    public IndexController(ClientFormService cfs, VehicleService vs) {
         this.cfs = cfs;
+        this.vs=vs;
     }
 
     @GetMapping("/hello")
@@ -28,9 +32,10 @@ public class IndexController {
         return "car";
     }
 
-    @GetMapping("/car/{company}/{model}/{version}")
-    public String vehicle(Model mod) {
-
+    @GetMapping("/car/{company}/{model}/{version}/{id}")
+    public String vehicle(@PathVariable int id, Model mod) {
+        
+        mod.addAttribute("vehicle", vs.find(id));
         mod.addAttribute("clientForm", new ClientForm());
         return "vehicle";
     }

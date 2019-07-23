@@ -31,6 +31,7 @@
                                     <td>${i.engineName}</td>
                                     <td>${i.engineVolume}</td>
                                     <td>${i.color}</td>
+                                    <td>${i.description}</td>
                                     <td><a href="admin-vehicle-edit/${i.id}">Edit</a></td>
                                     <td><a href="admin-vehicle-delete/${i.id}">Delete</a></td>
                                 </tr>

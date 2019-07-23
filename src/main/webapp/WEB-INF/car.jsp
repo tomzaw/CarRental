@@ -28,7 +28,7 @@
                     <div class="col s3">
                         <div class="card">   
                             <div class="card-image">
-                                <a href="/car/Honda/Accord/9"><img src="img/Honda_Accord_IX_facelift_China_2016-04-16.jpg" width="270" height="150"/></a>
+                                <a href="/car/Honda/Accord/9/1"><img src="img/Honda_Accord_IX_facelift_China_2016-04-16.jpg" width="270" height="150"/></a>
                             </div>
                             <span class="card-title">Honda Accord.</span>
                         </div>
@@ -37,7 +37,7 @@
                     <div class="col s3">
                         <div class="card">   
                             <div class="card-image">
-                                <a href="/car/Mazda/CX-3/1"><img src="img/Mazda_CX-3.jpg" width="270" height="150"/></a>
+                                <a href="/car/Mazda/CX-3/1/2"><img src="img/Mazda_CX-3.jpg" width="270" height="150"/></a>
                             </div>
                             <span class="card-title">Mazda CX-3.</span>
                         </div>
@@ -46,7 +46,7 @@
                     <div class="col s3">
                         <div class="card">   
                             <div class="card-image">
-                                <a href="/car/Nissan/Qashqai/1"><img src="img/Nissan_qashqai_j11_front-side.png" width="270" height="150"/></a>
+                                <a href="/car/Nissan/Qashqai/1/3"><img src="img/Nissan_qashqai_j11_front-side.png" width="270" height="150"/></a>
                             </div>
                             <span class="card-title">Nissan Qashqai.</span>
                         </div>
@@ -55,7 +55,7 @@
                     <div class="col s3">
                         <div class="card">   
                             <div class="card-image">
-                                <a href="/car/Skoda/Octavia/1"><img src="img/Skoda_Octavia_SE_TDi_S-A_1.6_Front.jpg" width="270" height="150"/></a>
+                                <a href="/car/Skoda/Octavia/1/4"><img src="img/Skoda_Octavia_SE_TDi_S-A_1.6_Front.jpg" width="270" height="150"/></a>
                             </div>
                             <span class="card-title">Skoda Octavia.</span>
                         </div>

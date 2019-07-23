@@ -16,14 +16,15 @@ public class Vehicle {
     private int id;
     private String company;
     private String model;
-    private int version;
+    private Integer version;
     private String engineName;
-    private float engineVolume;
+    private Float engineVolume;
     private String color;
+    private String description;
     @OneToMany(mappedBy = "vehicle")
     private List<Order> orders = new ArrayList<>();
 
-    public Vehicle(String company, String model, int version, String engineName, float engineVolume, String color) {
+    public Vehicle(String company, String model, Integer version, String engineName, Float engineVolume, String color) {
         this.company = company;
         this.model = model;
         this.version = version;
@@ -59,11 +60,11 @@ public class Vehicle {
         this.model = model;
     }
 
-    public int getVersion() {
+    public Integer getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public void setVersion(Integer version) {
         this.version = version;
     }
 
@@ -75,11 +76,11 @@ public class Vehicle {
         this.engineName = engineName;
     }
 
-    public float getEngineVolume() {
+    public Float getEngineVolume() {
         return engineVolume;
     }
 
-    public void setEngineVolume(float engineVolume) {
+    public void setEngineVolume(Float engineVolume) {
         this.engineVolume = engineVolume;
     }
 
@@ -89,6 +90,14 @@ public class Vehicle {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public List<Order> getOrders() {
