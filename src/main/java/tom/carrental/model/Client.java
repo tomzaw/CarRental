@@ -10,18 +10,18 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Client {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String firstName;
     private String lastName;
     private String email;
-    private int phone;
+    private String phone;
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
-    public Client(String firstName, String lastName, String email, int phone) {
+    public Client(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -63,11 +63,11 @@ public class Client {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

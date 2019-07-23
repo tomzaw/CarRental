@@ -14,9 +14,9 @@ public class ClientForm {
     private String firstName;
     private String lastName;
     private String email;
-    private int phone;
+    private String phone;
 
-    public ClientForm(String firstName, String lastName, String email, int phone) {
+    public ClientForm(String firstName, String lastName, String email, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -58,11 +58,11 @@ public class ClientForm {
         this.email = email;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

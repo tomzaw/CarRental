@@ -27,6 +27,7 @@
                                     <td>${i.id}</td>
                                     <td>${i.company}</td>
                                     <td>${i.model}</td>
+                                    <td>${i.version}</td>
                                     <td>${i.engineName}</td>
                                     <td>${i.engineVolume}</td>
                                     <td>${i.color}</td>
