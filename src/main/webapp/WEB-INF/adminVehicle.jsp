@@ -21,7 +21,7 @@
                     <c:when test="${vehicles==null or empty vehicles}"><h2>No vehicles.</h2></c:when>
                     <c:otherwise>
                         <table>
-                            <tr><td>Id</td><td>Comapany</td><td>Model</td><td>Engine</td><td>Engine volume</td><td>Color</td></tr>
+                            <tr><td>Id</td><td>Comapany</td><td>Model</td><td>Version</td><td>Engine</td><td>Engine volume</td><td>Color</td></tr>
                             <c:forEach items="${vehicles}" var="i">
                                 <tr>
                                     <td>${i.id}</td>
@@ -32,6 +32,7 @@
                                     <td>${i.engineVolume}</td>
                                     <td>${i.color}</td>
                                     <td>${i.description}</td>
+                                    <td>${i.price}</td>
                                     <td><a href="admin-vehicle-edit/${i.id}">Edit</a></td>
                                     <td><a href="admin-vehicle-delete/${i.id}">Delete</a></td>
                                 </tr>

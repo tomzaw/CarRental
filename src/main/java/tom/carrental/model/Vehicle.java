@@ -38,16 +38,20 @@ public class Vehicle {
     @NotBlank
     private String description;
 
+    @NotNull
+    private Float price;
+    
     @OneToMany(mappedBy = "vehicle")
     private List<Order> orders = new ArrayList<>();
 
-    public Vehicle(String company, String model, Integer version, String engineName, Float engineVolume, String color) {
+    public Vehicle(String company, String model, Integer version, String engineName, Float engineVolume, String color, Float price) {
         this.company = company;
         this.model = model;
         this.version = version;
         this.engineName = engineName;
         this.engineVolume = engineVolume;
         this.color = color;
+        this.price = price;
     }
 
     public Vehicle() {
@@ -115,6 +119,14 @@ public class Vehicle {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
     }
 
     public List<Order> getOrders() {

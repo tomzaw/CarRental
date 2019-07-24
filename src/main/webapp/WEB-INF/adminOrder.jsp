@@ -23,7 +23,7 @@
                         <table>
                             <tr>
                                 <td>Id</td><td>From</td><td>To</td><td>Payment type</td><td>Title</td><td>Description</td>
-                                <td>Client id</td><td>User id</td><td>Vehicle id</td>
+                                <td>Client id</td><td>User id</td><td>Vehicle id</td><td>Order date</td>
                             </tr>
                             <c:forEach items="${orders}" var="i">
                                 <tr>
@@ -36,6 +36,7 @@
                                     <td>${i.client.id}</td>
                                     <td>${i.appUser.id}</td>
                                     <td>${i.vehicle.id}</td>
+                                    <td>${i.orderDate}</td>
                                     <td><a href="admin-order-edit/${i.id}">Edit</a></td>
                                     <td><a href="admin-order-delete/${i.id}">Delete</a></td>
                                 </tr>

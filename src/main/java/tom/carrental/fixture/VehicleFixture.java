@@ -17,16 +17,16 @@ public class VehicleFixture {
     @PostConstruct
     public void init() {
 
-        Vehicle vehicle1 = new Vehicle("Honda", "Accord", 1, "TDi", 1.4f, "white");
+        Vehicle vehicle1 = new Vehicle("Honda", "Accord", 1, "TDi", 1.4f, "white", 150f);
         vehicle1.setDescription("Description of Honda.");
         
-        Vehicle vehicle2 = new Vehicle("Mazda", "Cx-3", 1, "TDi", 1.4f, "white");
+        Vehicle vehicle2 = new Vehicle("Mazda", "Cx-3", 1, "TDi", 1.4f, "white", 150f);
         vehicle2.setDescription("Description of Mazda.");
 
-        Vehicle vehicle3 = new Vehicle("Nissan", "Qashqai", 1, "TDi", 1.8f, "grey");
+        Vehicle vehicle3 = new Vehicle("Nissan", "Qashqai", 1, "TDi", 1.8f, "grey", 150f);
         vehicle3.setDescription("Description of Nissan.");
 
-        Vehicle vehicle4 = new Vehicle("Skoda", "Octavia", 1, "TDi", 1.6f, "white");
+        Vehicle vehicle4 = new Vehicle("Skoda", "Octavia", 1, "TDi", 1.6f, "white", 150f);
         vehicle4.setDescription("Description of Skoda.");
 
         vehicleRepository.save(vehicle1);

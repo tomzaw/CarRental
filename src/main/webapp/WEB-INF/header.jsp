@@ -19,6 +19,7 @@
                     <li><a href="/admin-order">Manage orders</a></li>
                     <li><a href="/admin-user">Manage users</a></li>
                     <li><a href="/admin-client-form">Manage forms</a></li>
+                    <li><a href="/login">Log in</a></li>
                 </ul>
             </div>
         </nav>

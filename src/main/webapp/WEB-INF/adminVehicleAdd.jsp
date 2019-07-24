@@ -34,6 +34,8 @@
                     <form:errors path="color"/>
                     <form:input type="text" path="description" placeholder="Description."/>
                     <form:errors path="description"/><br>
+                    <form:input type="text" path="price" placeholder="Price per day."/>
+                    <form:errors path="price"/><br>
                     <input class="btn-large blue" type="submit" value="Send"/>
                 </form:form>
 

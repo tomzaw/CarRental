@@ -32,6 +32,9 @@ public class Order {
 
     private String description;
 
+    @NotNull
+    private LocalDateTime orderDate;
+
     @ManyToOne
     private AppUser appUser;
     @ManyToOne
@@ -47,9 +50,11 @@ public class Order {
         this.description = description;
         this.appUser = appUser;
         this.client = client;
+        this.orderDate = LocalDateTime.now();
     }
 
     public Order() {
+        this.orderDate = LocalDateTime.now();
     }
 
     public int getId() {
@@ -104,6 +109,14 @@ public class Order {
         return appUser;
     }
 
+    public LocalDateTime getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(LocalDateTime orderDate) {
+        this.orderDate = orderDate;
+    }
+
     public void setAppUser(AppUser appUser) {
         this.appUser = appUser;
     }
@@ -126,6 +139,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" + "id=" + id + ", dateFrom=" + dateFrom + ", dateTo=" + dateTo + ", paymentType=" + paymentType + ", title=" + title + ", description=" + description + ", appUser=" + appUser + ", client=" + client + '}';
+        return "Order{" + "id=" + id + ", dateFrom=" + dateFrom + ", dateTo=" + dateTo + ", paymentType=" + paymentType + ", title=" + title + ", description=" + description + ", orderDate=" + orderDate + ", appUser=" + appUser + ", client=" + client + ", vehicle=" + vehicle + '}';
     }
 }

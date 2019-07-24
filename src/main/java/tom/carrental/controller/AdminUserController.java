@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import tom.carrental.model.AppUser;
 import tom.carrental.service.AppUserService;
 
@@ -69,5 +70,17 @@ public class AdminUserController {
 
         appUserService.delete(id);
         return "redirect:/admin-user";
+    }
+
+    @GetMapping("/login")
+    public String adminUserLoginGet() {
+
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String adminUserLoginPost(@RequestParam String email, @RequestParam String password) {
+
+        return "index";
     }
 }

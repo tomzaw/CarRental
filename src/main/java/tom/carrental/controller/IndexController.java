@@ -1,7 +1,9 @@
 package tom.carrental.controller;
 
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,11 +43,29 @@ public class IndexController {
     }
 
     @PostMapping("/post-client-form")
-    public String postClientForm(ClientForm clientForm) {
+    public String postClientForm(@Valid ClientForm clientForm, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "redirect:/car";
+        }
 
         cfs.save(clientForm);
-        return "car";
+        return "redirect:/car";
     }
+    
+    /*
+    @PostMapping("/post-client-form/{company}/{model}/{version}/{id}")
+    public String postClientForm(@PathVariable String company, @PathVariable String model, @PathVariable String version, @PathVariable String id,
+            @Valid ClientForm clientForm, BindingResult errors) {
+
+        if (errors.hasErrors()) {
+            return "redirect:/car/" + company + "/" + model + "/" + version + "/" + id;
+        }
+
+        cfs.save(clientForm);
+        return "redirect:/car";
+    }
+    */
 
     @GetMapping("/about")
     public String about() {

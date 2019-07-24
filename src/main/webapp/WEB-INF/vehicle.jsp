@@ -40,6 +40,7 @@
                         <table>
                             <tr><td>Company</td><td>${vehicle.company}</td></tr>
                             <tr><td>Model</td><td>${vehicle.model}</td></tr>
+                            <tr><td>Version</td><td>${vehicle.version}</td></tr>
                             <tr><td>Engine</td><td>${vehicle.engineName}</td></tr>
                             <tr><td>Engine Volume</td><td>${vehicle.engineVolume}</td></tr>
                             <tr><td>Color</td><td>${vehicle.color}</td></tr>
@@ -48,6 +49,8 @@
                 </div>
                 <div class="row">
                     <div class="col s6">
+                        <p style="font-weight: bold">Price 1-7 days ${vehicle.price} USD.</p>
+                        <p style="font-weight: bold">Price 7-more days ${vehicle.price+50} USD.</p>
                         <p>${vehicle.description}</p>
                         <br><br>
                         <br><br>
@@ -57,6 +60,7 @@
                         <h4>Phone: 000-000-000.</h4>
 
                         <form:form action="/post-client-form" method="post" modelAttribute="clientForm">
+                        <%--<form:form action="/post-client-form/${vehicle.company}/${vehicle.model}/${vehicle.version}/${vehicle.id}" method="post" modelAttribute="clientForm">--%>
                             <form:input type="text" path="firstName" placeholder="First name."/>
                             <form:errors path="firstName"/>
                             <form:input type="text" path="lastName" placeholder="Last name."/>
@@ -73,6 +77,6 @@
         </div>
 
         <%@include file="footer.jsp"%>
-        <script src="js/materialize.min.js"></script>
+        <script src="${pageContext.request.contentType}js/materialize.min.js"></script>
     </body>
 </html>
