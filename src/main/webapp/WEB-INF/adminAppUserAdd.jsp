@@ -18,7 +18,7 @@
             <div class="section">
                 <h1>Enter user data.</h1>
 
-                <form:form action="/admin-user-add" method="post" modelAttribute="user">
+                <form:form action="/admin-user-add" method="post" modelAttribute="appUser">
                     <form:hidden path="id"/>
                     <form:input type="text" path="username" placeholder="Username."/>
                     <form:errors path="username"/>

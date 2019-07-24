@@ -32,36 +32,36 @@ public class AdminUserController {
     @GetMapping("/admin-user-add")
     public String adminUserAddGet(Model mod) {
 
-        mod.addAttribute("user", new AppUser());
+        mod.addAttribute("appUser", new AppUser());
         return "adminAppUserAdd";
     }
 
     @PostMapping("/admin-user-add")
-    public String adminUserAddPost(@Valid AppUser user, BindingResult errors) {
+    public String adminUserAddPost(@Valid AppUser appUser, BindingResult errors) {
 
         if (errors.hasErrors()) {
             return "adminAppUserAdd";
         }
 
-        appUserService.save(user);
+        appUserService.save(appUser);
         return "redirect:/admin-user";
     }
 
     @GetMapping("/admin-user-edit/{id}")
     public String adminUserEditGet(@PathVariable int id, Model mod) {
 
-        mod.addAttribute("user", appUserService.find(id));
+        mod.addAttribute("appUser", appUserService.find(id));
         return "adminAppUserAdd";
     }
 
     @PostMapping("/admin-user-edit/{id}")
-    public String adminUserEditPost(@Valid AppUser user, BindingResult errors) {
+    public String adminUserEditPost(@Valid AppUser appUser, BindingResult errors) {
 
         if (errors.hasErrors()) {
             return "adminAppUserAdd";
         }
 
-        appUserService.save(user);
+        appUserService.save(appUser);
         return "redirect:/admin-user";
     }
 
